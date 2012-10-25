@@ -5,7 +5,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>angularjs</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
     <name>AngularJS</name>
     <description>WebJar for AngularJS</description>
     <url>http://webjars.org</url>
@@ -29,7 +29,7 @@
         <url>http://github.com/webjars/angularjs</url>
         <connection>scm:git:https://github.com/webjars/angularjs.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/angularjs.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>angularjs-1.0.2</tag>
     </scm>
 
     <developers>
@@ -53,8 +53,8 @@
                         <goals><goal>download-single</goal></goals>
                         <configuration>
                             <url>${angular.sourceUrl}</url>
-                            <fromFile>angular-${angular.version}.js</fromFile>
-                            <toFile>${destDir}/angular.js</toFile>
+                            <fromFile>angular.js</fromFile>
+                            <toDir>${destDir}</toDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -63,8 +63,8 @@
                         <goals><goal>download-single</goal></goals>
                         <configuration>
                             <url>${angular.sourceUrl}</url>
-                            <fromFile>angular-${angular.version}.min.js</fromFile>
-                            <toFile>${destDir}/angular.min.js</toFile>
+                            <fromFile>angular.min.js</fromFile>
+                            <toDir>${destDir}</toDir>
                         </configuration>
                     </execution>
                 </executions>
