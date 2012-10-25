@@ -1,23 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.angularjs</groupId>
-    <artifactId>angular</artifactId>
-    <name>AngularJS</name>
-    <version>1.0.0rc10</version>
+
     <packaging>jar</packaging>
-    <distributionManagement>
-        <repository>
-            <id>webjars.github.com</id>
-            <url>file:///${basedir}/../webjars.github.com/m2/</url>
-        </repository>
-    </distributionManagement>
+    <groupId>org.webjars</groupId>
+    <artifactId>angularjs</artifactId>
+    <version>1.0.2-SNAPSHOT</version>
+    <name>AngularJS</name>
+    <description>WebJar for AngularJS</description>
+    <url>http://webjars.org</url>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <angular.version>1.0.0rc10</angular.version>
+        <angular.version>1.0.2</angular.version>
         <angular.sourceUrl>http://code.angularjs.org/${angular.version}</angular.sourceUrl>
-        <destDir>${project.build.outputDirectory}/public/${project.groupId}/${project.artifactId}</destDir>
+        <destDir>${project.build.outputDirectory}/classes/META-INF/resources/webjars/${project.artifactId}/${angular.version}</destDir>
     </properties>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/angular/angular.js/blob/master/LICENSE</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>http://github.com/webjars/angularjs</url>
+        <connection>scm:git:https://github.com/webjars/angularjs.git</connection>
+        <developerConnection>scm:git:https://github.com/webjars/angularjs.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>jamesward</id>
+            <name>James Ward</name>
+            <email>james@jamesward.org</email>
+        </developer>
+    </developers>
+
     <build>
         <plugins>
             <plugin>
@@ -47,6 +69,42 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.3.2</version>
+            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.2</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>
