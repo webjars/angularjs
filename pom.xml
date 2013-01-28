@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>angularjs</artifactId>
-    <version>1.1.2-SNAPSHOT</version>
+    <version>1.1.2</version>
     <name>AngularJS</name>
     <description>WebJar for AngularJS</description>
     <url>http://webjars.org</url>
@@ -35,7 +35,7 @@
         <url>http://github.com/webjars/angularjs</url>
         <connection>scm:git:https://github.com/webjars/angularjs.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/angularjs.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>angularjs-1.1.2</tag>
     </scm>
 
     <developers>
@@ -78,7 +78,7 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/angular-${angular.version}" excludes="docs/"/>
+                                    <fileset dir="${project.build.directory}/angular-${angular.version}" excludes="docs/" />
                                 </move>
                             </target>
                         </configuration>
