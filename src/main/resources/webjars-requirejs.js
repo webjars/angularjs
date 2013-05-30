@@ -1,6 +1,7 @@
 /*global requirejs */
 
-// Ensure any request for this webjar brings in jQuery.
+// Ensure any request for these webjar scripts (webjars!angular-cookies.js etc.)
+// brings in the parent angular.js.
 requirejs.config({
     shim: {
         'angular-cookies':  [ 'webjars!angular.js' ],
