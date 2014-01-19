@@ -4,6 +4,7 @@
 // brings in the parent angular.js.
 requirejs.config({
     shim: {
+        'angular-route': [ 'webjars!angular.js' ],
         'angular-cookies': [ 'webjars!angular.js' ],
         'angular-loader': [ 'webjars!angular.js' ],
         'angular-mobile': [ 'webjars!angular.js' ],
