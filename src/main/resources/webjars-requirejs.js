@@ -7,7 +7,10 @@ var webjarsAngularjsChildren = [
     'angular-route',
     'angular-sanitize',
     'angular-scenario',
-    'angular-touch',
+    'angular-touch'
+]
+
+var webjarsAngularjsLocales = [
     'angular-locale_en-in',
     'angular-locale_sk-sk',
     'angular-locale_en-dsrt-us',
@@ -170,6 +173,11 @@ var webjarsAngularjsShim = { "angular": {"exports" : "angular"} };
 
 webjarsAngularjsChildren.forEach(function(child) {
     webjarsAngularjsPaths[child] = webjars.path("angularjs", child);
+    webjarsAngularjsShim[child] = ["angular", "webjars!angular.js"];
+});
+
+webjarsAngularjsLocales.forEach(function(child) {
+    webjarsAngularjsPaths[child] = webjars.path("angularjs", "i18n/"+child);
     webjarsAngularjsShim[child] = ["angular", "webjars!angular.js"];
 });
 
