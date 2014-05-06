@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>angularjs</artifactId>
-    <version>1.3.1-beta.7-1-SNAPSHOT</version>
+    <version>1.3.0-beta.7-2-SNAPSHOT</version>
     <name>AngularJS</name>
     <description>WebJar for AngularJS</description>
     <url>http://webjars.org</url>
@@ -23,7 +23,7 @@
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${angular.version}</destDir>
         <requirejs>
             {
-                paths: {
+                "paths": {
                     "angular": "angular",
                     "angular-animate": "angular-animate",
                     "angular-cookies": "angular-cookies",
@@ -190,7 +190,7 @@
                     "angular-locale_ur": "i18n/angular-locale_ur",
                     "angular-locale_fr-fr": "i18n/angular-locale_fr-fr"
                 },
-                shim: {
+                "shim": {
                     "angular": {"exports" : "angular"},
                     "angular-animate": ["angular"],
                     "angular-cookies": ["angular"],
