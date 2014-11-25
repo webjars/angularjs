@@ -27,8 +27,10 @@
                 "paths": {
                     "angular": "angular",
                     "angular-animate": "angular-animate",
+                    "angular-aria": "angular-aria",
                     "angular-cookies": "angular-cookies",
                     "angular-loader": "angular-loader",
+                    "angular-messages": "angular-messages",
                     "angular-mocks": "angular-mocks",
                     "angular-resource": "angular-resource",
                     "angular-route": "angular-route",
@@ -194,8 +196,10 @@
                 "shim": {
                     "angular": {"exports" : "angular"},
                     "angular-animate": ["angular"],
+                    "angular-aria": ["angular"],
                     "angular-cookies": ["angular"],
                     "angular-loader": ["angular"],
+                    "angular-messages": ["angular"],
                     "angular-mocks": ["angular"],
                     "angular-resource": ["angular"],
                     "angular-route": ["angular"],

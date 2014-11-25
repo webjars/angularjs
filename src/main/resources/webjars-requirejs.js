@@ -1,7 +1,9 @@
 var webjarsAngularjsChildren = [
     'angular-animate',
+    'angular-aria',
     'angular-cookies',
     'angular-loader',
+    'angular-messages',
     'angular-mocks',
     'angular-resource',
     'angular-route',
