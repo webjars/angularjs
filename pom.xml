@@ -18,7 +18,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <angular.version>1.3.13</angular.version>
+        <angular.version>1.3.14</angular.version>
         <angular.sourceUrl>https://code.angularjs.org/${angular.version}/angular-${angular.version}.zip</angular.sourceUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}
         </destDir>
@@ -402,13 +402,13 @@
                         </goals>
                         <configuration>
                             <target>
-                                <echo message="download archive" />
-                                <get src="${angular.sourceUrl}" dest="${project.build.directory}/${project.artifactId}.zip" />
-                                <echo message="unzip archive" />
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
-                                <echo message="moving resources" />
+                                <echo message="download archive"/>
+                                <get src="${angular.sourceUrl}" dest="${project.build.directory}/${project.artifactId}.zip"/>
+                                <echo message="unzip archive"/>
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
+                                <echo message="moving resources"/>
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/angular-${angular.version}" excludes="docs/" />
+                                    <fileset dir="${project.build.directory}/angular-${angular.version}" excludes="docs/"/>
                                 </move>
                             </target>
                         </configuration>
