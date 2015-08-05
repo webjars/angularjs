@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>angularjs</artifactId>
-    <version>1.4.3-1-SNAPSHOT</version>
+    <version>1.4.3-1</version>
     <name>AngularJS</name>
     <description>WebJar for AngularJS</description>
     <url>http://webjars.org</url>
@@ -1648,7 +1648,7 @@
         <url>http://github.com/webjars/angularjs</url>
         <connection>scm:git:https://github.com/webjars/angularjs.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/angularjs.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>angularjs-1.4.3-1</tag>
     </scm>
 
     <developers>
