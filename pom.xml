@@ -18,7 +18,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <angular.version>1.5.2</angular.version>
+        <angular.version>1.5.3</angular.version>
         <angular.sourceUrl>https://code.angularjs.org/${angular.version}/angular-${angular.version}.zip</angular.sourceUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}
         </destDir>
