@@ -18,8 +18,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <angular.version>1.6.2</angular.version>
-        <angular.sourceUrl>https://code.angularjs.org/${angular.version}/angular-${angular.version}.zip</angular.sourceUrl>
+        <angular.sourceUrl>https://code.angularjs.org/${version.unsnapshot}/angular-${version.unsnapshot}.zip</angular.sourceUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}
         </destDir>
         <requirejs>
@@ -1662,6 +1661,20 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>com.jamesward</groupId>
+                <artifactId>unsnapshot-maven-plugin</artifactId>
+                <version>0.2</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unsnapshot</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.8</version>
                 <executions>
@@ -1678,7 +1691,7 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/angular-${angular.version}" excludes="docs/" />
+                                    <fileset dir="${project.build.directory}/angular-${version.unsnapshot}" excludes="docs/" />
                                 </move>
                             </target>
                         </configuration>
