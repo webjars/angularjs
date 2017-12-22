@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>angularjs</artifactId>
-    <version>1.6.7-SNAPSHOT</version>
+    <version>1.5.11-SNAPSHOT</version>
     <name>AngularJS</name>
     <description>WebJar for AngularJS</description>
     <url>http://webjars.org</url>
