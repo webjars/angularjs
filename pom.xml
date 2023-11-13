@@ -19,7 +19,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.outputTimestamp>10</project.build.outputTimestamp>
-        <angular.sourceUrl>https://code.angularjs.org/${version.unsnapshot}/angular-${version.unsnapshot}.zip</angular.sourceUrl>
+        <angular.sourceUrl>https://registry.npmjs.org/angular/-/angular-${version.unsnapshot}.tgz</angular.sourceUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}
         </destDir>
         <requirejs>
@@ -1687,12 +1687,12 @@
                         <configuration>
                             <target>
                                 <echo message="download archive" />
-                                <get src="${angular.sourceUrl}" dest="${project.build.directory}/${project.artifactId}.zip" />
-                                <echo message="unzip archive" />
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <get src="${angular.sourceUrl}" dest="${project.build.directory}/${project.artifactId}.tgz" />
+                                <echo message="untar archive" />
+                                <untar src="${project.build.directory}/${project.artifactId}.tgz" dest="${project.build.directory}" compression="gzip" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/angular-${version.unsnapshot}" excludes="docs/" />
+                                    <fileset dir="${project.build.directory}/package"/>
                                 </move>
                             </target>
                         </configuration>
@@ -1702,7 +1702,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>3.0.0-M5</version>
+                <version>3.0.0</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -1710,26 +1710,9 @@
                 <version>3.2.2</version>
             </plugin>
             <plugin>
-                <groupId>com.googlecode.todomap</groupId>
-                <artifactId>maven-jettygzip-plugin</artifactId>
-                <version>0.0.4</version>
-                <configuration>
-                    <webappDirectory>target/classes</webappDirectory>
-                    <outputDirectory>target/classes</outputDirectory>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>process</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.5</version>
+                <version>1.6.13</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>sonatype-nexus-staging</serverId>
