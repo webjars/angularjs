@@ -11,14 +11,14 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>angularjs</artifactId>
-    <version>1.8.3-SNAPSHOT</version>
+    <version>1.8.3</version>
     <name>AngularJS</name>
     <description>WebJar for AngularJS</description>
     <url>http://webjars.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.outputTimestamp>10</project.build.outputTimestamp>
+        <project.build.outputTimestamp>1699892435</project.build.outputTimestamp>
         <angular.sourceUrl>https://registry.npmjs.org/angular/-/angular-${version.unsnapshot}.tgz</angular.sourceUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}
         </destDir>
@@ -1648,7 +1648,7 @@
         <url>http://github.com/webjars/angularjs</url>
         <connection>scm:git:https://github.com/webjars/angularjs.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/angularjs.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>angularjs-1.8.3</tag>
     </scm>
 
     <developers>
@@ -1692,7 +1692,7 @@
                                 <untar src="${project.build.directory}/${project.artifactId}.tgz" dest="${project.build.directory}" compression="gzip" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/package"/>
+                                    <fileset dir="${project.build.directory}/package" />
                                 </move>
                             </target>
                         </configuration>
